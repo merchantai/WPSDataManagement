@@ -50,3 +50,14 @@
         text-align: end;
     }
     
+    #createMaterialButton{
+        border: none;
+        padding: 10px;
+        background: #0e3d50;
+        color: white;
+        width: 150px;
+        float: right;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+    }

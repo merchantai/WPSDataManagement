@@ -15,6 +15,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             plantList = data;
+            localStorage.setItem("plantList", JSON.stringify(data));
             $("#plantTableBody").empty();
             for (i = 0; i < plantList.d.results.length; i++) {
                 html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
