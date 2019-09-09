@@ -1,0 +1,52 @@
+.container{
+    width: 80%;
+    margin: 0 0 50px 10%;
+    }
+      
+    .section{
+        background: #0e3d50;
+        color: white;
+        padding: 10px 20px;
+    }
+    
+    #general,
+    #value,
+    #stockDetails,
+    #storage{
+        display: grid;
+        grid-template-columns: repeat(2, 150px 1fr);
+        align-items: center;
+        justify-content: center;
+        grid-gap: 10px;
+    }
+    
+    #general label,
+    #stockDetails label,
+    #value label,
+    #storage label{
+        text-align: right;
+    }
+    #general input,
+    #stockDetails input,
+    #value input,
+    #storage input{
+        margin-left: 10px;
+        padding: 5px;
+        width: 200px;
+    }
+    
+    #longText{
+        grid-column: 2 / 5;
+        width: 700px;
+        height: 50px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+
+    select{
+        width: 215px;
+        padding: 7px;
+        margin-left: 10px;
+        text-align: end;
+    }
+    

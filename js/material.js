@@ -1,8 +1,11 @@
 
 $(document).ready(function () {
     var Materiallist, plantList, html, i, materialDataTable, plantDataTable;
+    var extMaterialNumber, extWerks, extLgort, extData;
 
     // Plant data call and table init
+
+
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_plant_list/?$format=json",
@@ -45,6 +48,20 @@ $(document).ready(function () {
         }
     });
     // material data call and table init
+
+
+    $.ajax({
+        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV",
+        type: "GET",
+        beforeSend: function (xhr) { xhr.setRequestHeader("X-CSRF-Token", "Fetch"); },
+        complete: function (xhr) {
+            token = xhr.getResponseHeader("X-CSRF-Token");
+
+
+        }
+    });
+
+
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
@@ -161,6 +178,15 @@ $(document).ready(function () {
 
     // Extend material
     $("#extendMaterial").on("click", function () {
+
+        for (var i = 0; i < Materiallist.d.results.length; i++) {
+            if (Materiallist.d.results[i].MaterialName.toUpperCase() === $("#materialInputName").val().toUpperCase()) {
+                // console.log(Materiallist.d.results[i].MaterialNo);
+                extMaterialNumber = Materiallist.d.results[i].MaterialNo;
+                break;
+            }
+        }
+
         $("#materialInputName").val("");
         $("#materialInput").css('display', 'none');
         $("#createMaterialWarning").css('display', 'none');
@@ -188,6 +214,33 @@ $(document).ready(function () {
 
     $("#materialunselectAll").on("click", function () {
         $('#materialTable tbody tr').removeClass('selected');
+    });
+
+    $("#materialExtendToSelected").on("click", function () {
+        // read selected data from Material table table
+        // console.log(materialDataTable.rows('.selected').data()[0][0]);
+        extMaterialNumber = materialDataTable.rows('.selected').data()[0][0];
+        $("#extendMaterialTable").css('display', 'flex');
+        plantDataTable.draw(false);
+    });
+
+    $("#ExtendToSelected").on("click", function () {
+        // read selected data from Plant data table
+        extWerks = plantDataTable.rows('.plantSelct').data()[0][1];
+        extLgort = plantDataTable.rows('.plantSelct').data()[0][2];
+
+        extData = {
+            "EvType": "",
+            "EvMessage": "",
+            "Matnr": extMaterialNumber,
+            "Werks": extWerks,
+            "Lgort": extLgort
+        };
+        console.log(extData);
+
+
+        // ajax post call for extend material 
+
     });
 
     $("#viewMaterial").on("click", function () {
