@@ -136,6 +136,8 @@ $(document).ready(function () {
                     break;
                 }
             }
+            // localStorage.setItem("createNewMaterial", $("#materialInputName").val());
+            //         location.href = "./createMaterial.html";
 
         }
     });

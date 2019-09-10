@@ -37,82 +37,85 @@
 
     <div class="container">
 
-        <p class="section" id="generalHead">Create New Material</p>
-        <div id="general">
-            <label for="name">Name</label>
-            <input type="text" id="name">
+        <p class="section" id="generalHead">Create New Material <span>(All fields are mandatory)</span></p>
 
-            <label for="materialType">Material Type</label>
-            <input type="text" id="materialType">
+        <form id="createMaterialForm">
+            <div id="general">
+                <label for="name">Name</label>
+                <input type="text" id="name">
 
-            <label for="salesOrganization">Sales Organization</label>
-            <input type="text" id="salesOrganization">
+                <label for="materialType">Material Type</label>
+                <input type="text" id="materialType">
 
-            <label for="partNumber">Part Number</label>
-            <input type="text" id="partNumber">
+                <label for="salesOrganization">Sales Organization</label>
+                <input type="text" id="salesOrganization">
 
-            <label for="MRPGroup">MRP Group</label>
-            <input type="text" id="MRPGroup">
+                <label for="partNumber">Part Number</label>
+                <input type="text" id="partNumber">
 
-            <label for="MRPType">MRP Type</label>
-            <input type="text" id="MRPType">
+                <label for="MRPGroup">MRP Group</label>
+                <input type="text" id="MRPGroup">
 
-            <label for="MRPController">MRP Controller</label>
-            <input type="text" id="MRPController">
+                <label for="MRPType">MRP Type</label>
+                <input type="text" id="MRPType">
 
-            <label for="PurchaseGroup">Purchase Group</label>
-            <input type="text" id="PurchaseGroup">
+                <label for="MRPController">MRP Controller</label>
+                <input type="text" id="MRPController">
 
-            <label for="lotSize">Lot Size</label>
-            <input type="text" id="lotSize">
+                <label for="PurchaseGroup">Purchase Group</label>
+                <input type="text" id="PurchaseGroup">
 
-            <label for="safetyStock">Safety Stock</label>
-            <input type="text" id="safetyStock">
+                <label for="lotSize">Lot Size</label>
+                <input type="text" id="lotSize">
 
-            <label for="qualityActDact">Quality Activate / Deactivate</label>
-            <input type="text" id="qualityActDact">
+                <label for="safetyStock">Safety Stock</label>
+                <input type="text" id="safetyStock">
 
-            <label for="valuationClass">Valuation Class</label>
-            <input type="text" id="valuationClass">
+                <label for="qualityActDact">Quality Activate / Deactivate</label>
+                <input type="text" id="qualityActDact">
 
-            <label for="storageLocation">Storage Location</label>
-            <select id="storageLocation">
-            </select>
+                <label for="valuationClass">Valuation Class</label>
+                <input type="text" id="valuationClass">
 
-            <label for="plant">Plant</label>
-            <select id="plant">
-            </select>
+                <label for="storageLocation">Storage Location</label>
+                <select id="storageLocation">
+                </select>
 
-            <label for="unitOfMeasure">Unit of Measure</label>
-            <select id="unitOfMeasure">
-                <option value="Standard">Standard Price</option>
-                <option value="Moving">Moving Price</option>
-            </select>
+                <label for="plant">Plant</label>
+                <select id="plant">
+                </select>
 
-            <label for="groupText">Group Text</label>
-            <input type="text" id="groupText">
-
-            <label for="purchaseGroup">Purchase Group</label>
-            <input type="text" id="purchaseGroup">
-
-            <div></div>
-            <div></div>
-
-            <label for="longText">Long Text</label>
-            <textarea type="text-d" id="longText"></textarea>
-
-            <label for="priceControl">Price Control</label>
-            <div>
-                <select id="priceControlSelect">
+                <label for="unitOfMeasure">Unit of Measure</label>
+                <select id="unitOfMeasure">
                     <option value="Standard">Standard Price</option>
                     <option value="Moving">Moving Price</option>
                 </select>
-                <input type="text" id="priceControl">
+
+                <label for="groupText">Group Text</label>
+                <input type="text" id="groupText">
+
+                <label for="purchaseGroup">Purchase Group</label>
+                <input type="text" id="purchaseGroup">
+
+                <div></div>
+                <div></div>
+
+                <label for="longText">Long Text</label>
+                <textarea type="text-d" id="longText"></textarea>
+
+                <label for="priceControl">Price Control</label>
+                <div>
+                    <select id="priceControlSelect">
+                        <option value="Standard">Standard Price</option>
+                        <option value="Moving">Moving Price</option>
+                    </select>
+                    <input type="text" id="priceControl">
+                </div>
+
+
             </div>
-
-        </div>
-
-        <button id="createMaterialButton">Create</button>
+            <button id="createMaterialButton" type="submit"><img src="./images/send white.svg" alt="send"></button>
+        </form>
     </div>
 
     <script src="./js/global.js"></script>

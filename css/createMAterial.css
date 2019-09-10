@@ -1,12 +1,18 @@
 .container{
     width: 80%;
     margin: 0 0 50px 10%;
+    position: relative;
     }
       
     .section{
         background: #0e3d50;
         color: white;
         padding: 10px 20px;
+    }
+
+    .section span{
+        font-size: 12px;
+        margin-left: 10px;
     }
     
     #general,
@@ -52,12 +58,12 @@
     
     #createMaterialButton{
         border: none;
-        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        padding:5px 30px;
         background: #0e3d50;
-        color: white;
-        width: 150px;
-        float: right;
         cursor: pointer;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        border-radius: 20px;
+        border-radius: 30px; 
     }
